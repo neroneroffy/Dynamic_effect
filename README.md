@@ -11,7 +11,7 @@
 <img src="https://github.com/capslocktao/Dynamic_effect/blob/master/show/separate.gif">
 
 <h2 id="3d_rotation">3D旋转</h2>
-<img src="https://github.com/capslocktao/Dynamic_effect/blob/master/show/3d_rotation.gif"
+<img src="https://github.com/capslocktao/Dynamic_effect/blob/master/show/3d_rotation.gif">
 
 <h2 id="photowall">照片墙</h2>
 <img src="https://github.com/capslocktao/Dynamic_effect/blob/master/show/photowall.gif">
