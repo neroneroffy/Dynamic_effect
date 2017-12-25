@@ -3,9 +3,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style>
+			.box{
+				width: 200px;
+				margin:0 auto
+			}
+		</style>
 	</head>
 	<body>
-		<canvas id="cvs" width="200" height="300"></canvas>
+	<div class="box">
+		<canvas id="cvs" width="200" height="300" ></canvas>
+
+	</div>
 	</body>
 </html>
 <script>
@@ -41,7 +50,7 @@
 	ctx.arc(w,h,r,start,end);
 	ctx.stroke();
 	pro++
-	t = (p*100).toFixed(2)+"%"
+	t = (p*200).toFixed(2)+"%"
 	ctx.font = "25px arial";
 	ctx.textAlign = "center";
 	ctx.textBaseline = "middle"
