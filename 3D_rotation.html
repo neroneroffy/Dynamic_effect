@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.3.min.js"></script>
+		<style>
+			.wrap{transform-style: preserve-3d;perspective: 3000px;position: absolute;top:0;left:0;right:0;bottom:0;margin:auto;width:980px;height: 500px;transform: rotateX(20deg) rotateY();}
+			.item{width: 980px;height:500px;position: absolute;transition: transform 1s;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			
+		</div>
+	</body>
+</html>
+<script>
+	for(var i = 0;i<4;i++){
+		var deg = i*90
+		$("<div class='item'></div>").css({
+			"background":"url(img/"+i+".jpg)",
+			"transform":"rotateX("+deg+"deg) translateZ(250px)"
+		}).appendTo($(".wrap"))
+	}
+	var n = 0;
+	$(window).click(function(){
+		n++;
+		$(".item").each(function(index,element){
+			var d = index*90-n*90;
+			console.log(this)
+			$(this).css({
+				"transform":"rotateX("+d+"deg) translateZ(250px)"
+			})
+		})
+	})
+</script>

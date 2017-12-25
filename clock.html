@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#cvs{
+				position: absolute;top:0;right:0;bottom:0;left:0;
+				margin:auto
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cvs" width="1000" height="1000"></canvas>
+		
+	</body>
+</html>
+
+<script type="text/javascript">
+	var cvs = document.getElementById("cvs");
+	var ctx = cvs.getContext("2d");
+	var x1,y1,x2,y2;
+	var len;
+	var r = 180;
+	var x0 = 500,y0 = 500;
+	var deg = 0;
+	var num =-1
+	
+	function init(){
+
+			function draw(i){
+		 	
+		 	deg = i*(Math.PI*2)/60
+		 	if(i%5==0){
+		 		
+		 		ctx.lineWidth=5;
+		 		ctx.strokeStyle = "red";
+		 		len = 15;
+		 	}else{
+		 		ctx.lineWidth=2;
+		 		ctx.strokeStyle = "black";
+		 		len = 10;
+		 	}
+		 	x1 = x0+(r-len)*Math.cos(deg);
+		 	y1 = y0+(r-len)*Math.sin(deg);
+		 	
+		 	x2 = x0+r*Math.cos(deg);
+		 	y2 = y0+r*Math.sin(deg);
+		 	
+		 	ctx.beginPath();
+		 	ctx.moveTo(x1,y1);
+		 	ctx.lineTo(x2,y2);
+		 	ctx.stroke();
+		 	ctx.lineCap="round";
+		 }
+		 
+		 
+		 for (var i = 0;i < 60;i++){
+		 	draw(i)
+		 }
+	 
+	}
+	init()
+	function run(){
+		
+	 	var time = new Date();
+		var s = time.getSeconds();
+		var m = time.getMinutes();
+		var h = time.getHours();
+		h=h%12;
+	 	ctx.clearRect(0,0,1000,1000)
+	 	deg= s*(Math.PI*2)/60-Math.PI/2;
+	 	var sx =x0+(r-20)*Math.cos(deg)
+	 	var sy =y0+(r-20)*Math.sin(deg)
+	 	
+	 	init()
+	 	ctx.beginPath()
+	 	ctx.moveTo(x0,y0);
+	 	ctx.lineTo(sx,sy);
+	 	ctx.stroke();
+	 	
+	 	
+	 	deg= (m+s/60)*(Math.PI*2/60)-Math.PI/2;
+	 	var mx =x0+(r-30)*Math.cos(deg)
+	 	var my =y0+(r-30)*Math.sin(deg)
+	 	ctx.beginPath()
+	 	ctx.lineWidth=4;
+	 	ctx.moveTo(x0,y0);
+	 	ctx.lineTo(mx,my);
+	 	ctx.stroke() 
+	 	
+	 	deg= (h+m/60+s/3600)*(Math.PI*2/12)-Math.PI/2;
+	 	var hx =x0+(r-40)*Math.cos(deg)
+	 	var hy =y0+(r-40)*Math.sin(deg)
+	 	ctx.beginPath()
+	 	ctx.lineWidth=6;
+	 	ctx.moveTo(x0,y0);
+	 	ctx.lineTo(hx,hy);
+	 	ctx.stroke() 
+
+	 }
+	 run()
+	 setInterval(run,1000)
+</script>

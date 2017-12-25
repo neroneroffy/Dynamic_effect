@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src = "jquery-1.11.3.min.js"></script>
+	<script>
+	$(function(){
+		for(var i = 0 ;i<1225;i++){
+			var x = i%35;
+			var y = parseInt(i/35)
+			$("<div class='item'></div>").css({
+				"background":"url(img/1.jpg) no-repeat",
+				"background-position":x*(-49)+"px "+y*(-25)+"px",
+				"left":x*49+"px",
+				"top":y*25+"px"
+			}).appendTo($("#box"))
+		}
+		var nosplict = true
+		$("#box").click(function(){
+
+				
+			if(nosplict){
+				
+				$(".item").each(function(index,element){
+			
+					var xnum = Math.random()*6000-3000
+					var ynum = Math.random()*6000-3000
+					
+					$(this).css(
+						{"transform":"translate("+xnum+"px,"+ynum+"px)"}
+					)
+				})
+					
+					
+				
+			}else{
+				$(".item").each(function(){
+					$(this).css(
+						{"transform":"translate(0px,0px)"}
+					)
+				})
+				
+			}
+			
+			nosplict=!nosplict
+		})
+		
+	})
+	</script>
+	<style>
+	body{overflow: hidden;}
+		#box{width: 980px;height: 500px;background-color: #fff;}
+		.center{position: absolute;left: 0;top:0;right:0;bottom:0;margin:auto}
+		.item{width: 49px;height: 25px;position: absolute;transition: transform 2s;}
+		
+	</style>
+</head>
+<body>
+	<div id="box" class="center">
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src = "jquery-1.11.3.min.js"></script>
+	<style>
+		#box{width:980px;height: 500px;margin:0 auto;position: relative;}
+		.item{background:url(img/7.jpg);width: 196px;height: 100px;position: absolute}
+	</style>
+</head>
+<body>
+	<div id="box">
+
+</body>
+</html>
+<script>
+		for(var i = 0;i<25;i++){
+			var x = i%5;
+			var y = parseInt(i/5);
+			$("<div class='item'></div>").css({"background-position":x*(-196)+"px "+y*(-100)+"px",
+				"left":x*196+"px",
+				"top":y*100+"px"}).appendTo($("#box"))
+		}
+		$(".item").click(function(){
+			/*$(".item").each(function(index,element){
+				$(this).delay(index*300).animate({"opacity":"0.2"},1000)
+			})*/
+			hide(0)
+		})
+		function hide(index){
+			$(".item").eq(index).animate({"opacity":"0.2"},200,function(){
+				if(index<24){
+					hide(index+1)
+				}
+			})
+			
+		}
+
+</script>

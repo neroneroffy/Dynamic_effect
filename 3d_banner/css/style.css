@@ -1,0 +1,91 @@
+
+/*重置*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img { border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul { list-style: none; }
+
+caption, th { text-align: left; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after { content:;
+}
+
+abbr, acronym { border: 0; }
+
+body {
+  color: #666;
+  background-color: #eee;
+  font: 12px/1.5;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix { zoom: 1; }
+
+.container { margin:150px auto; width:1000px;}
+
+.poster-main {
+  width: 1000px;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.poster-main a, .poster-main img { display: block; }
+
+.poster-main .poster-list {
+  width: 1000px;
+  height: 500px;
+}
+
+.poster-main .poster-list .poster-item {
+  width: 200px;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.poster-main .poster-btn {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.poster-main .poster-prev-btn {
+  left: 0;
+  background: url(../img/left.png) no-repeat center center;
+}
+
+.poster-main .poster-next-btn {
+  right: 0;
+  background: url(../img/right.png) no-repeat center center;
+}

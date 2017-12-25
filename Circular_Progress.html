@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="cvs" width="200" height="300"></canvas>
+	</body>
+</html>
+<script>
+	var cvs = document.getElementById("cvs");
+	var ctx = cvs.getContext("2d");
+	var w = cvs.width/2;
+	var h = cvs.height/2;
+	ctx.lineWidth = 16
+	var r = Math.min(w,h)-ctx.lineWidth/2;
+	var pro = 0;
+	var total = 100;
+	var i = 0
+	function draw(){
+	
+	if(pro>total){
+		//clearInterval(timer)
+			
+		pro = 0
+		
+	}
+	ctx.clearRect(0,0,cvs.width,cvs.height)
+	ctx.beginPath();
+	ctx.strokeStyle = "#CCCCCC";
+	ctx.arc(w,h,r,0,Math.PI*2)
+	ctx.stroke()
+	
+	ctx.beginPath();
+	ctx.strokeStyle="black";
+	ctx.lineCap = "round";
+	var p = (2/4)*(pro/total)
+	var start = (Math.PI*3/2)*pro/total;
+	var end = start+Math.PI*p;
+	ctx.arc(w,h,r,start,end);
+	ctx.stroke();
+	pro++
+	t = (p*100).toFixed(2)+"%"
+	ctx.font = "25px arial";
+	ctx.textAlign = "center";
+	ctx.textBaseline = "middle"
+	ctx.fillStyle="orange"
+	ctx.fillText(t,w,h)
+}
+	var timer = setInterval(draw,30)
+</script>
