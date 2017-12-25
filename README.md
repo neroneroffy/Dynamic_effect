@@ -7,8 +7,8 @@
 [环形进度条](#circle_progress)<br/>
 ***
 
-
-![image](https://github.com/capslocktao/Dynamic_effect/blob/master/show/separate.gif)
+<h2 id="separate">图片分割后随机散开</h2>
+<img src="https://github.com/capslocktao/Dynamic_effect/blob/master/show/separate.gif">
 
 <h2 id="3d_rotation">3D旋转</h2>
 ![image](https://github.com/capslocktao/Dynamic_effect/blob/master/show/3d_rotation.gif)
